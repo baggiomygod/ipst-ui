@@ -1,7 +1,13 @@
 <template>
-  <div id="app">
+  <div>
+    <h2>button</h2>
+    <section>
+      <i-switch v-model="value1" on-text="" off-text=""></i-switch>
+    </section>
+
+    <h2>form</h2>
+    <section>
     <i-input size="big" v-model="name"></i-input>
-    <i-switch v-model="value1" on-text="" off-text=""></i-switch>
     <div>
       <i-input-number v-model="num1" @change="handleChange" :min="1" :max="10"></i-input-number>
     </div>
@@ -22,20 +28,22 @@
         placeholder="选择时间">
       </i-time-select>
   </div>
-  <h3>element ui</h3>
-  <div>
-      <el-select v-model="value" placeholder="请选择">
-        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-        </el-option>
-      </el-select>
-    </div>
+
+    </section>
+
+    <h2>table</h2>
+    <section>
+      <ipst-table></ipst-table>
+    </section>
   </div>
 
 </template>
 
 <script>
+import ipstTable from './demo/table'
 export default {
   name: "App",
+  components: {ipstTable},
   data() {
     return {
       name: "ipst",

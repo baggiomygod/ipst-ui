@@ -43,7 +43,8 @@ module.exports = {
       {
         test: /\.js(x)*$/,
         loader: 'babel-loader',
-        include: [resolve('src')]
+        include: [resolve('src')],
+        exclude: [resolve('src/utils/popper.js')]
       },
 
       {

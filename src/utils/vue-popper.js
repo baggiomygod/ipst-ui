@@ -1,11 +1,11 @@
-import Vue from 'vue';
 import {
   PopupManager
-} from '@/utils/popup';
+} from './popup'
+import Vue from 'vue'
 
-const PopperJS = Vue.prototype.$isServer ? function () { } : require('./popper');
-const stop = e => e.stopPropagation();
-
+const PopperJS = Vue.prototype.$isServer ? function () {} : require('./popper')
+const stop = e => e.stopPropagation()
+window.popperjs = require('./popper')
 /**
  * @param {HTMLElement} [reference=$refs.reference] - The reference element used to position the popper.
  * @param {HTMLElement} [popper=$refs.popper] - The HTML element used as popper, or a configuration used to generate the popper.
@@ -104,7 +104,8 @@ export default {
       options.placement = this.currentPlacement;
       options.offset = this.offset;
       options.arrowOffset = this.arrowOffset;
-      
+
+      console.log('PooperJS:', PopperJS);
       this.popperJS = new PopperJS(reference, popper, options);
       this.popperJS.onCreate(_ => {
         this.$emit('created', this);
@@ -196,4 +197,4 @@ export default {
   deactivated () {
     this.$options.beforeDestroy[0].call(this);
   }
-};
+}

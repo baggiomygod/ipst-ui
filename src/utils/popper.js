@@ -27,6 +27,11 @@
 // Cross module loader
 // Supported: Node, AMD, Browser globals
 //
+/**
+ * 模块处理，支持：Node，AMD，浏览器全局变量
+ * root 指代全局变量
+ * factory 指代下面的 Popper
+ */
 ;(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
       // AMD. Register as an anonymous module.
