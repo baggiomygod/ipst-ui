@@ -1,0 +1,10 @@
+/build/
+/config/
+/dist/
+/*.js
+/test/unit/coverage/
+src/lib/*
+src/utils/*
+src/transitions/*
+src/mixins/*
+src/locale/*

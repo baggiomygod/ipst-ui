@@ -1,0 +1,17 @@
+.DS_Store
+.idea/
+node_modules/
+npm-debug.log
+.idea/
+.vscode/
+build.old/
+config.old/
+example/
+config/
+index.html
+build/
+test/
+static/
+package-lock.json
+src/
+build/
